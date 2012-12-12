@@ -1,0 +1,9 @@
+#!/bin/sh
+cd $( dirname $0 )
+
+alias ll='ls -lhG'
+
+source ../git/.git-completion.bash
+source ../git/.git-prompt.sh
+export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
+
