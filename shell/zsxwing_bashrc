@@ -1,9 +1,13 @@
 #!/bin/sh
-xxxxx=$( dirname $BASH_SOURCE )
 
+shell_dir=$( dirname $BASH_SOURCE )
+
+# ls
 alias ll='ls -lhG'
 
-source $xxxxx/../git/.git-completion.bash
-source $xxxxx/../git/.git-prompt.sh
+# git
+source $shell_dir/../git/.git-completion.bash
+source $shell_dir/../git/.git-prompt.sh
+
 export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
 
