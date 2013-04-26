@@ -1,3 +1,4 @@
+
 (setq shell-file-name "/bin/bash")
 (setq make-backup-files nil)
 
@@ -21,3 +22,10 @@
 
 (global-set-key "\C-xp" ' back-window )
 
+(defun zsx-sh-style ()
+  "My personal preferences for 'sh-mode'"
+  (interactive)
+  (setq sh-basic-offset 2
+        sh-indentation 2))
+
+(add-hook 'sh-mode-hook 'zsx-sh-style)
