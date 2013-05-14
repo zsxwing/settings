@@ -2,6 +2,8 @@
 (setq shell-file-name "/bin/bash")
 (setq make-backup-files nil)
 (setq vc-follow-symlinks nil)
+(setq-default indent-tabs-mode nil)
+(set-face-attribute 'default nil :family "Monaco" :background "black" :foreground "white")
 
 (defun copy-line (arg)
   "Copy lines (as many as prefix argument) in the kill ring"
@@ -42,4 +44,3 @@
 (add-hook 'sh-mode-hook 'zsx-sh-style)
 
 (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
- 
