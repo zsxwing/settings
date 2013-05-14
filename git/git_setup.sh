@@ -16,6 +16,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 git config --global alias.sc "svn dcommit"
 git config --global alias.sr "svn rebase"
 
+git config --global core.editor emacs
 
 git config --global color.ui true
 
