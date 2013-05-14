@@ -2,6 +2,8 @@
 (setq shell-file-name "/bin/bash")
 (setq make-backup-files nil)
 (setq vc-follow-symlinks nil)
+(setq-default indent-tabs-mode nil)
+(set-face-attribute 'default nil :family "Monaco" :background "black" :foreground "white")
 
 (defun copy-line (arg)
   "Copy lines (as many as prefix argument) in the kill ring"
@@ -40,3 +42,7 @@
 (load-file (zsx_get_el_file "google-c-style.el"))
 
 (add-hook 'sh-mode-hook 'zsx-sh-style)
+
+(setq auto-mode-alist
+                (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
