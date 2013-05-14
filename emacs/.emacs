@@ -40,3 +40,6 @@
 (load-file (zsx_get_el_file "google-c-style.el"))
 
 (add-hook 'sh-mode-hook 'zsx-sh-style)
+
+(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+ 
