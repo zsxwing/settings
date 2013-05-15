@@ -11,5 +11,5 @@ source $shell_dir/../git/.git-prompt.sh
 
 export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
 
-alias e='emacs -fs'
+alias e='emacs -mm'
 export EDITOR=emacs
