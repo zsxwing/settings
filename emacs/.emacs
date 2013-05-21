@@ -24,6 +24,8 @@
   (other-window -1))
 
 (global-set-key "\C-xp" ' back-window )
+(global-set-key "\M-[" ' scroll-down )
+(global-set-key "\M-]" ' scroll-up )
 
 (defun zsx-sh-style ()
   "My personal preferences for 'sh-mode'"
