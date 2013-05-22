@@ -46,3 +46,7 @@
 (add-hook 'sh-mode-hook 'zsx-sh-style)
 
 (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+
+;; Display the line number and the column number.
+(global-linum-mode t)
+(setq column-number-mode t)
