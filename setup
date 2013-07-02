@@ -1,6 +1,11 @@
 #!/bin/bash
 
+set -e
+
 cd $( dirname $0 )
 
-rm ~/.emacs
+[[ -e ~/.emacs ]] && rm ~/.emacs
 ln -s ${PWD}/emacs/.emacs ~/.emacs
+
+chmod u+x git/git_setup.sh
+git/git_setup.sh
