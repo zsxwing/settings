@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 shell_dir=$( dirname $BASH_SOURCE )
 
@@ -11,5 +11,12 @@ source $shell_dir/../git/.git-prompt.sh
 
 export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
 
+# emacs
 alias e='emacs -mm'
+# Open a file with emacs in the read-only mode
+er()
+{
+  e $@ --eval '(setq buffer-read-only t)'
+}
 export EDITOR=emacs
+
