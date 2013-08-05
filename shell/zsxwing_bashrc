@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 shell_dir=$( dirname $BASH_SOURCE )
 
@@ -6,16 +6,23 @@ shell_dir=$( dirname $BASH_SOURCE )
 alias ll='ls -lhG'
 
 # git
-source $shell_dir/../git/.git-completion.bash
-source $shell_dir/../git/.git-prompt.sh
+source $shell_dir/../git/git-completion.bash
+source $shell_dir/../git/git-prompt.sh
 
 export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
 
+# emacs
 if [[ "Darwin" = "$(uname)" ]]; then
   alias e='emacs'
 else
   alias e='emacs -mm'
 fi
 export EDITOR=e
+
+# Open a file with emacs in the read-only mode
+er()
+{
+  e $@ --eval '(setq buffer-read-only t)'
+}
 
 alias g=gradle
