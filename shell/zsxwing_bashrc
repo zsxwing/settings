@@ -30,3 +30,10 @@ er()
 }
 
 alias g=gradle
+
+# We offen need to set ***_HOME and add ${***_HOME}/bin to PATH
+# This a simple way to update the PATH
+add_bin() {
+  local some_home=$1
+  export PATH="${some_home}/bin:${PATH}"
+}
