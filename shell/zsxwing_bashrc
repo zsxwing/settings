@@ -3,7 +3,7 @@
 shell_dir=$( dirname $BASH_SOURCE )
 
 # ls
-alias ll='ls -lhG'
+alias ll="ls -lhG"
 
 # git
 source $shell_dir/../git/git-completion.bash
@@ -12,12 +12,16 @@ source $shell_dir/../git/git-prompt.sh
 export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
 
 # emacs
-if [[ "Darwin" = "$(uname)" ]]; then
-  alias e='emacs'
-else
-  alias e='emacs -mm'
+
+EMACS="emacs"
+# The default Mac OS X emacs does not support -mm
+# We need to exclude it
+if [[ "Darwin" != "$(uname)" ]]; then
+  EMACS="${EMACS} -mm"
 fi
-export EDITOR=e
+export EDITOR="${EMACS}"
+
+alias e="${EMACS}"
 
 # Open a file with emacs in the read-only mode
 er()
