@@ -11,5 +11,11 @@ source $shell_dir/../git/.git-prompt.sh
 
 export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
 
-alias e='emacs -mm'
-export EDITOR=emacs
+if [[ "Darwin" = "$(uname)" ]]; then
+  alias e='emacs'
+else
+  alias e='emacs -mm'
+fi
+export EDITOR=e
+
+alias g=gradle

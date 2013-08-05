@@ -42,11 +42,13 @@
 
 (load-file (zsx_get_el_file "piglatin.el"))
 (load-file (zsx_get_el_file "google-c-style.el"))
+(load-file (zsx_get_el_file "linum.el"))
 
 (add-hook 'sh-mode-hook 'zsx-sh-style)
 
 (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
 
 ;; Display the line number and the column number.
+(require 'linum)
 (global-linum-mode t)
 (setq column-number-mode t)
