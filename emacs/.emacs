@@ -14,9 +14,9 @@
 
 (global-set-key "\C-c\C-k" ' copy-line)
 
-(custom-set-variables 
- ' (cua-mode t nil (cua-base))
- ' (tool-bar-mode nil nil (tool-bar)))
+(custom-set-variables
+  '(cua-mode t nil (cua-base))
+  '(tool-bar-mode nil nil (tool-bar)))
 (custom-set-faces)
 
 (defun back-window ()
@@ -52,3 +52,7 @@
 (require 'linum)
 (global-linum-mode t)
 (setq column-number-mode t)
+
+;; Set auctex to preview latex formulas
+(setq  preview-gs-options  '("-q" "-dNOSAFER" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4"))
+
